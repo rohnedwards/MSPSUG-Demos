@@ -1,5 +1,5 @@
 ﻿
-Add-Type -ReferencedAssemblies $PresentationPath\itextsharp.dll @"
+Add-Type -ReferencedAssemblies $PSScriptRoot\itextsharp.dll @"
 using System;
 using System.Text;
 using System.Collections.Generic;
@@ -501,8 +501,8 @@ function New-PdfRectangleCanvas {
     param(
         [Parameter(Mandatory, ValueFromPipeline)]
         [string] $FilePath,
-        [System.Collections.IDictionary] $ColorsAndRectangles,
-        [System.Collections.IDictionary] $ColorsAndTextChunks,
+        [System.Collections.IDictionary] $ColorsAndRectangles = @{},
+        [System.Collections.IDictionary] $ColorsAndTextChunks = @{},
         [double] $ResizeFactor = 1
     )
 
